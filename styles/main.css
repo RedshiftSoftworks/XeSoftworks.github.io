@@ -1,0 +1,191 @@
+:root {
+    --border: rgb(212, 224, 229);
+    
+    --g1: rgb(201, 200, 203);
+    --g2: rgb(142, 134, 136);
+    --g3: rgb(41, 41, 37);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+.gradient {
+    text-align: center;
+    background-image: linear-gradient(0deg, #453f4d, #ffffff);
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rotate 0.6s linear infinite;
+  }
+  @keyframes rotate {
+    0% {
+      background-image: linear-gradient(0deg, #453f4d, #ffffff);
+    }
+    10% {
+      background-image: linear-gradient(36deg, #453f4d, #ffffff);
+    }
+    20% {
+      background-image: linear-gradient(72deg, #453f4d, #ffffff);
+    }
+    30% {
+      background-image: linear-gradient(108deg, #453f4d, #ffffff);
+    }
+    40% {
+      background-image: linear-gradient(144deg, #453f4d, #ffffff);
+    }
+    50% {
+      background-image: linear-gradient(180deg, #453f4d, #ffffff);
+    }
+    60% {
+      background-image: linear-gradient(216deg, #453f4d, #ffffff);
+    }
+    70% {
+      background-image: linear-gradient(252deg, #453f4d, #ffffff);
+    }
+    80% {
+      background-image: linear-gradient(288deg, #453f4d, #ffffff);
+    }
+    90% {
+      background-image: linear-gradient(324deg, #453f4d, #ffffff);
+    }
+    100% {
+      background-image: linear-gradient(360deg, #453f4d, #ffffff);
+    }
+  }
+
+  button {
+    border-radius: 60px;
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+  }
+  button:hover {
+    background-color: black;
+    color: white;
+    border: solid 1px white;
+    transition: 0.3s;
+  }
+
+  div.container {
+    height: 100%;
+  }
+  .card {
+    height: 500px;
+    border: 0.5vmin solid var(--border);
+    cursor: pointer;
+    position: relative;
+    width: 56vmin;
+  }
+  
+  .card:hover:before {
+    background-position: 100% 100%;
+    transform: scale(1.08, 1.03);
+  }
+  
+  .card:hover > .card-content {
+    background-position: -10% 0%;
+  }
+  
+  .card:hover > .card-icon {
+    color: white; 
+  }
+  
+  .card:hover > .card-content > .card-subtitle > .card-subtitle-word {  
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity 0ms, transform 200ms cubic-bezier(.90, .06, .15, .90);
+  }
+  
+  .card:before {
+    background: linear-gradient(
+      130deg, 
+      transparent 0% 33%, 
+      var(--g1) 66%, 
+      var(--g2) 83.5%, 
+      var(--g3) 100%
+    );
+    background-position: 0% 0%;
+    background-size: 300% 300%;
+    content: "";
+    height: 100%;
+    left: 0px;
+    pointer-events: none;
+    position: absolute;
+    top: 0px;
+    transition: background-position 350ms ease, transform 350ms ease;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .card-content {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.2) 8%, 
+      transparent 8%
+    );
+    background-position: 0% 0%;
+    background-size: 5vmin 5vmin;
+    height: calc(100% - 10vmin);
+    padding: 5vmin;
+    position: relative;
+    transition: background-position 350ms ease;
+    width: calc(100% - 10vmin);
+    z-index: 2;
+  }
+  
+  .card-title,
+  .card-subtitle {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    margin: 0px;
+  }
+  
+  .card-title {
+    font-size: 6vmin;
+  }
+  
+  .card-subtitle {
+    font-size: 3vmin;
+    margin-top: 2vmin;
+  }
+  
+  .card-subtitle-word {
+    display: inline-block;
+    margin: 0vmin 0.3vmin;
+    opacity: 0;
+    position: relative;  
+    transform: translateY(40%);
+    transition: none;
+  }
+  
+  .card-icon {
+    bottom: 0px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 7vmin;
+    left: 0px;
+    margin: 5vmin;
+    position: absolute;
+    transition: color 250ms ease;
+    z-index: 2;
+  }
+
+  ::selection {
+    background-color:rgb(41, 41, 37);
+  }
+
+  #but {
+    border-radius: 60%;
+  }
+
+
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-family: monospace;
+    font-size: 10px;
+  }
